@@ -1,8 +1,31 @@
-# React + Vite
+# Chat App made with VITE + React JS and Appwrite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+After cloning the repo:
 
-Currently, two official plugins are available:
+Create a `.env` file based on the .env.example existing file.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+$ npm install
+$ npm run dev
+```
+
+## Set Up an Appwrite Account
+
+Go to [Appwrite](https://cloud.appwrite.io/register) and create an account.
+
+In your appwrite console create a project and database.
+
+1. Create a collection called "messages" and add the following attributes:
+
+```
+KEY       TYPE
+user_id   string 50
+username  string 50
+body      string 250
+
+```
+
+2. In your `messages` collection, go to "settings" -> "Update Permissions" -> "+ Add Role" and select "Any". Give this user type "Create", "Read", "Update" and "Delete" permissions.
+
+Once you've set up your project you should be able to update all necessary env variables.
+Run your development server to view the output.
